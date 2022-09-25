@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://kit.fontawesome.com/501a409cb6.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <!--Let browser know website is optimized for mobile-->
+  <title>Task List</title>
+  <style>
+    #loading,
+    #results {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-secondary">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card card-body mt-5 text-center">
+          <h1 class="heading display-5 pb-3">Loan Calculator</h1>
+
+          <form action="" id="loan-form">
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control" placeholder="Loan Amount" id="amount">
+                <!-- <span class="input-group-text">.00</span> -->
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">%</span>
+                <input type="number" class="form-control" placeholder="Annual Interest" id="interest">
+              </div>
+            </div>
+            <div class="form-group mb-3">
+              <input type="number" class="form-control" placeholder="Repayment Years" id="years">
+            </div>
+            <div class="form-group">
+              <input class="btn btn-dark w-100" type="submit" value="Calculate">
+            </div>
+          </form>
+          <!-- Loader here -->
+          <div id="loading" class="pt-4">
+            <div class="d-flex justify-content-center">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+          <!-- Results -->
+          <div id="results" class="pt-4">
+            <h5>Results</h5>
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <span class="input-group-text">Monthly Payment</span>
+                <input type="text" class="form-control" id="monthly-payment" disabled>
+                <!-- <span class="input-group-text">.00</span> -->
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <span class="input-group-text">Total Payment</span>
+                <input type="text" class="form-control" id="total-payment" disabled>
+                <!-- <span class="input-group-text">.00</span> -->
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <span class="input-group-text">Total Interest</span>
+                <input type="text" class="form-control" id="total-interest" disabled>
+                <!-- <span class="input-group-text">.00</span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+  <!-- javascript file -->
+  <script src="script.js"></script>
+</body>
+
+</html>
