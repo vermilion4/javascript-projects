@@ -3,7 +3,8 @@ let load = document.getElementById('loading');
 let results = document.getElementById('results');
 
 // Listen for submit
-document.getElementById('loan-form').addEventListener('submit', function (e) {
+document.getElementById('loan-form').addEventListener('submit', function (e)
+{
   // Show loader
   load.style.display = 'block';
   // Hide results
@@ -14,7 +15,8 @@ document.getElementById('loan-form').addEventListener('submit', function (e) {
   e.preventDefault();
 });
 
-function calculateResults() {
+function calculateResults ()
+{
   // Get form values
   let amount = document.getElementById('amount').value;
   let interest = document.getElementById('interest').value;
@@ -33,7 +35,8 @@ function calculateResults() {
   let totalInterest = totalPayment - amount;
 
   // Check if finite
-  if (isFinite(monthlyPayment)) {
+  if (isFinite(monthlyPayment))
+  {
     //Use localestring to give comma seperated (money) format: 234,567,657
     monthlyPayment = Number(monthlyPayment.toFixed(2)).toLocaleString();
 
@@ -42,9 +45,9 @@ function calculateResults() {
     totalInterest = Number(totalInterest.toFixed(2)).toLocaleString();
 
     // put values in HTML
-    document.getElementById('monthly-payment').value = `$ ${monthlyPayment}`;
-    document.getElementById('total-payment').value = `$ ${totalPayment}`;
-    document.getElementById('total-interest').value = `$ ${totalInterest}`;
+    document.getElementById('monthly-payment').value = `$ ${ monthlyPayment }`;
+    document.getElementById('total-payment').value = `$ ${ totalPayment }`;
+    document.getElementById('total-interest').value = `$ ${ totalInterest }`;
 
     // Hide loader
     load.style.display = 'none';
@@ -52,16 +55,19 @@ function calculateResults() {
     results.style.display = 'block';
   }
   // if not finite, display error for 2 seconds
-  else {
+  else
+  {
     showError('Please enter valid numbers');
-    setTimeout(function () {
+    setTimeout(function ()
+    {
       document.querySelector('.alert').remove();
     }, 2000);
   }
 }
 
 // Show error function
-function showError(err) {
+function showError (err)
+{
   // Hide loader
   load.style.display = 'none';
   // Hide results

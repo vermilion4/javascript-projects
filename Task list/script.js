@@ -9,7 +9,8 @@ const taskInput = document.querySelector('#task');
 loadEventListeners();
 
 //Load all event listeners
-function loadEventListeners() {
+function loadEventListeners ()
+{
   //Load event
   document.addEventListener('DOMContentLoaded', getTasks);
   // Add task event
@@ -23,10 +24,12 @@ function loadEventListeners() {
 }
 
 //Get tasks
-function getTasks() {
+function getTasks ()
+{
   let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-  tasks.forEach((task) => {
+  tasks.forEach((task) =>
+  {
     //create li element
     const li = document.createElement('li');
     li.className = 'collection-item';
@@ -46,10 +49,13 @@ function getTasks() {
   });
 }
 // Add task
-function addTask(e) {
-  if (taskInput.value === '') {
+function addTask (e)
+{
+  if (taskInput.value === '')
+  {
     alert('Add a task');
-  } else {
+  } else
+  {
     //create li element
     const li = document.createElement('li');
     li.className = 'collection-item';
@@ -78,16 +84,20 @@ function addTask(e) {
 }
 
 //Store task
-function storeTaskInLocalStorage(task) {
+function storeTaskInLocalStorage (task)
+{
   let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   tasks.push(task);
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 //Remove Task
-function removeTask(e) {
-  if (e.target.parentElement.classList.contains('delete-item')) {
-    if (confirm('Are you sure?')) {
+function removeTask (e)
+{
+  if (e.target.parentElement.classList.contains('delete-item'))
+  {
+    if (confirm('Are you sure?'))
+    {
       e.target.parentElement.parentElement.remove();
 
       //remove from local storage
@@ -97,11 +107,14 @@ function removeTask(e) {
 }
 
 //Remove task from local storage
-function removeTaskFromLocalStorage(taskItem) {
+function removeTaskFromLocalStorage (taskItem)
+{
   let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-  tasks.forEach((task, index) => {
-    if (task === taskItem.textContent) {
+  tasks.forEach((task, index) =>
+  {
+    if (task === taskItem.textContent)
+    {
       tasks.splice(index, 1);
     }
   });
@@ -110,12 +123,14 @@ function removeTaskFromLocalStorage(taskItem) {
 }
 
 //Clear tasks
-function clearTasks() {
+function clearTasks ()
+{
   // taskList.innerHTML = '';
 
   //faster
 
-  while (taskList.firstChild) {
+  while (taskList.firstChild)
+  {
     taskList.removeChild(taskList.firstChild);
   }
 
@@ -124,20 +139,25 @@ function clearTasks() {
 }
 
 //Clear all tasks from local storage
-function clearAllTasksFromLocalStorage() {
+function clearAllTasksFromLocalStorage ()
+{
   localStorage.clear();
 }
 
 //Filter tasks
-function filterTasks(e) {
+function filterTasks (e)
+{
   const text = e.target.value.toLowerCase();
 
-  document.querySelectorAll('.collection-item').forEach(function (task) {
+  document.querySelectorAll('.collection-item').forEach(function (task)
+  {
     const item = task.firstChild.textContent;
 
-    if (item.toLowerCase().indexOf(text) != -1) {
+    if (item.toLowerCase().indexOf(text) != -1)
+    {
       task.style.display = 'block';
-    } else {
+    } else
+    {
       task.style.display = 'none';
     }
   });
